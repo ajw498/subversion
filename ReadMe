@@ -7,7 +7,7 @@ community.  The software is released under an Apache/BSD-style open
 source license."
 This file details RISC OS specific aspects, for more infomation about
 Subversion in general, please see http://subversion.tigris.org or
-!SVN.!Help
+http://svnbook.red-bean.com/book.html
 
 Subversion is currently *Alpha*, so some features may not be fully
 implemented, or may contain bugs. This port can only access repositories via
