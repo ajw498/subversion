@@ -13,7 +13,7 @@ Subversion is currently *Alpha*, so some features may not be fully
 implemented, or may contain bugs. This port can only access repositories via
 http, and not (currently) local repositories.
 
-RISC OS version 0.03 (21-Jan-03), a port of version 0.17
+RISC OS version 0.04 (1-Mar-03), a port of version 0.18.1 dev build
 
 Usage
 ~~~~~
@@ -32,7 +32,7 @@ svn: network socket initialization failed
 
 Peter Naulls' UnixHome from http://www.chocky.org/unix/downloads/
 (Subversion will work without UnixHome, but it will keep creating a
-/subversion directory in your current directory.
+/subversion directory in your current directory).
 
 Log mesages
 ~~~~~~~~~~~
@@ -60,11 +60,6 @@ information without having to alter the filename as is currently needed,
 so I intend to use this in the future (however the current method may
 still be useful in some situations, and so will be retained as an
 alternative to the properties).
-
-Known Bugs
-~~~~~~~~~~
-Merging changes from a repository into a locally modified file is
-likely to fail.
 
 TODO
 ~~~~
