@@ -21,6 +21,7 @@
 #include <stdio.h>
 #include <signal.h>
 #include "getopt.h"
+#include <unixlib/local.h>
 
 extern char const version_string[];
 
@@ -239,6 +240,8 @@ main (argc, argv)
   char *commonname;
   char **file;
   struct stat statb;
+
+  __riscosify_control |= __RISCOSIFY_FILETYPE_EXT;
 
   initialize_main (&argc, &argv);
   program_name = argv[0];

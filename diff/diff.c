@@ -25,6 +25,7 @@ the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.  */
 #include <signal.h>
 #include "getopt.h"
 #include "fnmatch.h"
+#include <unixlib/local.h>
 
 #ifndef DEFAULT_WIDTH
 #define DEFAULT_WIDTH 130
@@ -234,6 +235,8 @@ main (argc, argv)
   int prev = -1;
   int width = DEFAULT_WIDTH;
   int show_c_function = 0;
+
+  __riscosify_control |= __RISCOSIFY_FILETYPE_EXT;
 
   /* Do our initializations.  */
   initialize_main (&argc, &argv);
