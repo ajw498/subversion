@@ -1,7 +1,7 @@
-v0.04 1-Mar-03
-Updated to Subversion 0.18.1
+v0.04 13-Mar-03
+Updated to Subversion 0.19.1 (dev build)
 This fixes the problem with merging changes into a locally modified file
- 
+
 v0.03 21-Jan-03
 Updated to Subversion 0.17
 Bundled diff and diff3
