@@ -1,8 +1,8 @@
-v1.02 15-Dec-02
+v0.02 15-Dec-02
 Updated to Subversion 0.16.0
 Added support for SSL connections (https)
 Updated Icon
 Compiled for 32bit compatibility
 
-v1.01 27-Aug-02
+v0.01 27-Aug-02
 Initial port, based on Subversion 0.14.2
