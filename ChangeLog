@@ -1,3 +1,11 @@
+v0.03 21-Jan-03
+Updated to Subversion 0.17
+Bundled diff and diff3
+Fixed problem with tabs on the command line which prevented svn diff from working
+Fixed problems with diffing files with ,xyz type extensions
+Image directories are now treated as files
+Now uses CryptRandom module to init SSL sockets
+
 v0.02 15-Dec-02
 Updated to Subversion 0.16.0
 Added support for SSL connections (https)
