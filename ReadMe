@@ -13,8 +13,6 @@ Subversion is currently *Alpha*, so some features may not be fully
 implemented, or may contain bugs. This port can only access repositories via
 http, and not (currently) local repositories.
 
-RISC OS version 0.05 (26-Oct-03), a port of version 0.32.1
-
 Usage
 ~~~~~
 Make sure !SVN has been booted, then use it as you would use the command
