@@ -57,7 +57,6 @@ addition to the properties).
 TODO
 ~~~~
 Things that I'm intending to do in the future:
-Improve the !SVN icon
 Add support for SSL connections
 Add support for local repository access (requires some additions to
 UnixLib first)
