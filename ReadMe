@@ -13,7 +13,7 @@ Subversion is currently *Alpha*, so some features may not be fully
 implemented, or may contain bugs. This port can only access repositories via
 http, and not (currently) local repositories.
 
-RISC OS version 0.01 (27-Aug-02), a port of version 0.14.2 (dev build)
+RISC OS version 0.02 (15-Dec-02), a port of version 0.16.0 (dev build)
 
 Usage
 ~~~~~
@@ -26,6 +26,9 @@ Prerequisites
 ~~~~~~~~~~~~~
 You need GNU diff and diff3 programs available in your Run$Path. The
 ones supplied with a recent version of GCC are suitable.
+Peter Naulls' UnixHome from http://www.chocky.org/unix/downloads/
+(Subversion will work without UnixHome, but it will keep creating a
+/subversion directory in your current directory.
 
 Log mesages
 ~~~~~~~~~~~
@@ -57,7 +60,6 @@ alternative to the properties).
 TODO
 ~~~~
 Things that I'm intending to do in the future:
-SSL connections (now compiled in, but untested)
 Add support for local repository access (requires some additions to
 UnixLib first)
 Support filetypes as properties
