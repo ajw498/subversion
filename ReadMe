@@ -13,8 +13,6 @@ This port can access repositories via http and https. It also has
 support for the standalone svn protocol, although I have not tested this
 myself. It cannot currently access local repositories.
 
-RISC OS version 1.00 (29-Feb-04), a port of version 1.0.0
-
 Usage
 ~~~~~
 Make sure !SVN has been booted, then use it as you would use the command
