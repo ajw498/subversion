@@ -1,6 +1,6 @@
 #!/bin/sh
 
-(cd \!SVN && make) || exit 1
+#(cd \!SVN && make) || exit 1
 
 zip -r -9 -, svn.zip !SVN CryptRand ChangeLog Licences ReadMe \
 -x */o/* *.svn* || exit 1

@@ -2,6 +2,6 @@ Set SVN$Dir <Obey$Dir>
 
 IconSprites <SVN$Dir>.!Sprites
 
-Set Alias$SVN Wimpslot -Min 1800K |M /<SVN$Dir>.svn %%*0
+Set Alias$SVN Wimpslot -Min 3500K |M /<SVN$Dir>.svn %%*0
 
-Set UnixEnv$SVN_EDITOR <SVN$Dir>.svnee
+Set UnixEnv$SVN_EDITOR <SVN$Dir>.ee -unix

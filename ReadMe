@@ -34,10 +34,10 @@ Peter Naulls' UnixHome from http://www.chocky.org/unix/downloads/
 
 Log mesages
 ~~~~~~~~~~~
-If you have Justin Fletcher's EE program installed, then Subversion will
-use that to allow you to edit log messages in you favorite text editor.
-If not, then you will have to use the -m option on the command line to
-specify the log message.
+If you do not use the -m option on the command line to specify the log
+message then Subversion will use Justin Fletcher's EE program to allow
+you to edit log messages in you favorite text editor.
+
 
 Filetypes
 ~~~~~~~~~
