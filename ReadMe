@@ -51,13 +51,13 @@ Subversion also supports properties, which allow arbitrary metadata
 to be attached to a file. This would be ideal for storing filetype
 information without having to alter the filename as is currently needed,
 so I intend to use this in the future (however the current method may
-still be useful in some situations, and so will be retained in
-addition to the properties).
+still be useful in some situations, and so will be retained as an
+alternative to the properties).
 
 TODO
 ~~~~
 Things that I'm intending to do in the future:
-Add support for SSL connections
+SSL connections (now compiled in, but untested)
 Add support for local repository access (requires some additions to
 UnixLib first)
 Support filetypes as properties
