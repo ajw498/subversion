@@ -4,4 +4,4 @@
 
 (cd diff && make) || exit 1
 
-zip -r -9 -, svn.zip !SVN Licences ReadMe UnixLib -x */o/* *.svn* || exit 1
+zip -r -9 -, svn.zip !SVN Licences ReadMe -x */o/* *.svn* || exit 1
