@@ -1,0 +1,3 @@
+#!/bin/sh
+
+zip -r -9 -, svn.zip !SVN Licences ReadMe UnixLib -x */o/* *.svn*
