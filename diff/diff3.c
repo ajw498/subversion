@@ -242,7 +242,8 @@ main (argc, argv)
   struct stat statb;
 
   __riscosify_control |= __RISCOSIFY_FILETYPE_EXT;
-
+  __feature_imagefs_is_file = 1;
+  
   initialize_main (&argc, &argv);
   program_name = argv[0];
 

@@ -237,7 +237,8 @@ main (argc, argv)
   int show_c_function = 0;
 
   __riscosify_control |= __RISCOSIFY_FILETYPE_EXT;
-
+  __feature_imagefs_is_file = 1;
+  
   /* Do our initializations.  */
   initialize_main (&argc, &argv);
   program_name = argv[0];
