@@ -1,0 +1,5 @@
+Merge the !System supplied here with your main !System. We strongly
+advise using an automated tool to do this merge. On machines running
+a new style boot sequence run !Boot, click on the System icon and
+follow instructions. For other machines use !SysMerge (or install the
+new boot sequence).

@@ -1,0 +1,87 @@
+RISC OS port of the Subversion client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+"The goal of the Subversion project is to build a version control
+system that is a compelling replacement for CVS in the open source
+community.  The software is released under an Apache/BSD-style open
+source license."
+This file details RISC OS specific aspects, for more infomation about
+Subversion in general, please see http://subversion.tigris.org or
+!SVN.!Help
+
+Subversion is currently *Alpha*, so some features may not be fully
+implemented, or may contain bugs. This port can only access repositories via
+http, and not (currently) local repositories.
+
+RISC OS version 0.01 (27-Aug-02), a port of version 0.14.2 (dev build)
+
+Usage
+~~~~~
+Make sure !SVN has been booted, then use it as you would use the command
+line client under unix. All filenames should be specified in unix
+format, rather than RISC OS format, eg svn diff foo/bar.c rather than
+svn diff foo.c.bar
+
+Prerequisites
+~~~~~~~~~~~~~
+You need GNU diff and diff3 programs available in your Run$Path. The
+ones supplied with a recent version of GCC are suitable.
+
+Log mesages
+~~~~~~~~~~~
+If you have Justin Fletcher's EE program installed, then Subversion will
+use that to allow you to edit log messages in you favorite text editor.
+If not, then you will have to use the -m option on the command line to
+specify the log message.
+
+Filetypes
+~~~~~~~~~
+If you wish a file's filetype to be retained when it is added to a
+repository, then you should specify its name with a comma and hex
+filetype appended, in the same way as John Tytgat's CVS port works.
+eg.
+svn add !Boot
+Adds the file !Boot without any filetype information. When it is checked
+out from the repository, it will have its filetype set to text.
+svn add !Boot,feb
+Adds the file !Boot, with the filetype &feb (Obey). The file will retain
+its filetype when it is checked out.
+
+Subversion also supports properties, which allow arbitrary metadata
+to be attached to a file. This would be ideal for storing filetype
+information without having to alter the filename as is currently needed,
+so I intend to use this in the future (however the current method may
+still be useful in some situations, and so will be retained in
+addition to the properties).
+
+TODO
+~~~~
+Things that I'm intending to do in the future:
+Improve the !SVN icon
+Add support for SSL connections
+Add support for local repository access (requires some additions to
+UnixLib first)
+Support filetypes as properties
+Keep the RISC OS port up to date
+
+Things that I'm unlikely to be doing:
+Porting the subversion server (this would require a port of Apache2
+first)
+Writing a subversion GUI (this doesn't stop anyone else from writing one
+though)
+
+Source Code
+~~~~~~~~~~~
+Source code is currently available on request, but I intend to submit
+all suitable modifications for inclusion in the main Subversion source
+tree.
+
+Feedback
+~~~~~~~~
+If you have any comments or problems, or even if you just find it
+useful, please let me know at mailto:alex@alexwaugh.com
+
+Any updates to the port should be available from
+http://www.alexwaugh.com/
+
+Alex Waugh

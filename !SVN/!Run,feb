@@ -1,0 +1,5 @@
+Set SVN$Dir <Obey$Dir>
+
+Run <SVN$Dir>.!Boot
+
+Filer_Run <SVN$Dir>.!Help
