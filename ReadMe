@@ -69,12 +69,14 @@ or convert your repository.
 Filetypes as properties
 Subversion supports properties, which allow arbitrary metadata to be
 attached to a file. This can be used to store the filetype in the same
-manner as the executable bit is stored on the Unix svn client. When you add
-a file, svn will automatically set the svn:riscosfiletype property to the
-hexadecimal value of the file's filetype. When you check out a file from a
-repository, if it has a svn:riscosfiletype property then the filetype will be
-set according to that, otherwise the filetype will be guessed using the mimemap
-module. If you need to change a file's filetype, then instead of just changing the filetype, you need to change the property. Subversion will then change the filetype for you.
+manner as the executable bit is stored on the Unix svn client. When you
+add a file, svn will automatically set the svn:riscosfiletype property
+to the hexadecimal value of the file's filetype. When you check out a
+file from a repository, if it has a svn:riscosfiletype property then
+the filetype will be set according to that, otherwise the filetype will
+be guessed using the mimemap module. If you need to change a file's
+filetype, then instead of just changing the filetype, you need to
+change the property. Subversion will then change the filetype for you.
 e.g. To change the filetype of the ReadMe file to Data (hexadecimal type
 ffd)
 *svn propset svn:riscosfiletype ffd ReadMe
@@ -88,9 +90,9 @@ It does not matter what value the variable is set to, it just has to
 exist. If you wish to turn off the behaviour then unset the variable,
 e.g. *unset svn$filetypeext
 
-If you wish a file's filetype to be retained when it is added to a repository,
-then you should specify its name with a comma and hex filetype appended, in the
-same way as John Tytgat's CVS port works. e.g.
+If you wish a file's filetype to be retained when it is added to a
+repository, then you should specify its name with a comma and hex
+filetype appended, in the same way as John Tytgat's CVS port works. e.g.
 svn add !Boot
 Adds the file !Boot without any filetype information. When it is checked
 out from the repository, it will have its filetype set to text.
@@ -119,6 +121,10 @@ names differe only in case than that will also break. This is not a
 RISC OS specific problem, it also happens on any OS that supports case
 insensitive filesystems.
 
+Wildcards do not work in the same way as on Unix. svn add * will not
+add all files in the directory, it will add a file with the name of *,
+which will match the first file in the directory, and svn will get very
+confused.
 
 TODO
 ~~~~
