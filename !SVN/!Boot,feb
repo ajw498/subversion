@@ -2,7 +2,7 @@ Set SVN$Dir <Obey$Dir>
 
 IconSprites <SVN$Dir>.!Sprites
 
-Set Alias$SVN Wimpslot -Min 1200K |M /<SVN$Dir>.svn %%*0
+Set Alias$SVN Wimpslot -Min 1400K |M /<SVN$Dir>.svn %%*0
 
 Set SVN$Heap ""
 
