@@ -160,7 +160,7 @@ Index: subversion/libsvn_wc/log.c
                    }
 -              }                
 +                if (! strcmp (propchange->name, SVN_PROP_FILETYPE))
-+                  filetype = propchange->value;
++                  filetype = svn_string_dup(propchange->value, pool);
 +              }
            }
  
@@ -275,8 +275,8 @@ Index: subversion/libsvn_subr/io.c
  
 +      SVN_ERR (svn_path_cstring_from_utf8 (&path_apr, path, pool));
 +
-+      if (filetype)
-+        filetype_val = 0xfff & strtol(filetype->data, NULL, 16);
++      if (filetype && filetype->len > 0)
++      	filetype_val = 0xfff & strtol(filetype->data, NULL, 16);
 +
 +      __object_set_attrs (path_apr, buf, sizeof (buf), filetype_val, __ATTR_NOTSPECIFIED);
 +    }
