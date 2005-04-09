@@ -271,7 +271,7 @@ Index: subversion/libsvn_subr/io.c
      }
  #endif /* ! WIN32 */
  
-@@ -1097,7 +1104,29 @@
+@@ -1089,13 +1096,35 @@
    return SVN_NO_ERROR;
  }
  
@@ -301,6 +301,13 @@ Index: subversion/libsvn_subr/io.c
  svn_error_t *
  svn_io_is_file_executable(svn_boolean_t *executable, 
                            const char *path, 
+                           apr_pool_t *pool)
+ {
+-#if defined(APR_HAS_USER) && !defined(WIN32)
++#if defined(APR_HAS_USER) && !defined(WIN32) && !defined(__riscos__)
+   apr_finfo_t file_info;
+   apr_status_t apr_err;
+   apr_uid_t uid;
 @@ -1137,6 +1166,38 @@
    return SVN_NO_ERROR;
  }
