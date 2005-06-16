@@ -1,4 +1,0 @@
-Important
-=========
-
-This version of Subversion by default uses a different method of storing filetypes than previous versions. Please read the filetypes section of the ReadMe file before using it, then either ensure the svn$filetypeext variable is set or convert your repository to the new method. See the ReadMe in the convertfiletypes directory for more information about converting.

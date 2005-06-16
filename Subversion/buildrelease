@@ -1,7 +1,0 @@
-#!/bin/sh
-
-#(cd \!SVN && make) || exit 1
-
-zip -r -9 -, svn.zip !SVN CryptRand ChangeLog Licences ReadMe \
-ReadMe_Upgrading source convertfiletypes \
--x */o/* *.svn* || exit 1
