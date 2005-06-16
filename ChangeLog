@@ -1,3 +1,7 @@
+v1.05 16-Jun-05
+Updated to Subversion 1.2.0
+Fixed incorrect timestamps on exported files.
+
 v1.04 9-Apr-05
 Updated to Subversion 1.1.4
 Fixed problems with updating a directory containing image fs files.
