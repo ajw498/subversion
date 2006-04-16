@@ -3,6 +3,7 @@ Set SVN$Dir <Obey$Dir>
 IconSprites <SVN$Dir>.!Sprites
 
 Set Alias$SVN Wimpslot -Min 4000K |M /<SVN$Dir>.svn %%*0
+Set Alias$svnadmin Wimpslot -Min 2000K |M /<SVN$Dir>.svnadmin %%*0
 
 |Uncomment the following line if you wish to use ee to write log messages
 |Set UnixEnv$SVN_EDITOR <SVN$Dir>.ee -unix

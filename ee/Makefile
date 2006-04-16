@@ -6,38 +6,33 @@
 # ProjectDefines = -g
 ProjectDefines = 
 
-CC = cc
-CCFLAGS = -c -depend !Depend -Wp -IUnixLib: -JUnixLib: -throwback -APCS 3/32bit/fpe3 $(ProjectDefines)
-LINK = link
-LINKFLAGS = -aif -c++ -o $@ 
+CC = gcc
+CCFLAGS = -c  $(ProjectDefines)
+LINK = gcc
+LINKFLAGS = -o $@
 OBJASM = objasm
-OBJASMFLAGS = -throwback -NoCache -depend !Depend -stamp -quit
-MKDIR = CDir
+OBJASMFLAGS =
+#MKDIR = CDir
 
 # Object files
-OBJS	= o.riscosify_ee o.eecode
+OBJS	= riscosify_ee.o eecode.o
 
 # System libraries :
-LDLIBS	= UnixLib:o.UnixLib
+LDLIBS	=
 
 # User libraries :
 USRLIBS = 
 
 # Final target:
 
-All:	<CVSRODst$Dir>.!CVS.Bin.ee
+All:	../!SVN/ee,ff8
 
-<CVSRODst$Dir>.!CVS.Bin.ee: $(OBJS) $(LDLIBS)
-	@$(MKDIR) <CVSRODst$Dir>.!CVS
-	@$(MKDIR) <CVSRODst$Dir>.!CVS.Bin
+../!SVN/ee,ff8: $(OBJS) $(LDLIBS)
 	$(LINK) $(OBJS) $(LDLIBS) $(LINKFLAGS)
-	SetType $@ Absolute
 
-.SUFFIXES: .o .c .cmhg
-.INIT:
-	@$(MKDIR) o
+.SUFFIXES: .o .c
 
 .c.o:;	$(CC) $(CCFLAGS) -o $@ $<
-.s.o:; 	$(OBJASM) $(OBJASMFLAGS) $< $@
+.s.o:; 	$(OBJASM) $(OBJASMFLAGS) -c $< -o $@
 
 # Dynamic dependencies:

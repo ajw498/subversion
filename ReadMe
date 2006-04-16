@@ -7,11 +7,11 @@ community.  The software is released under an Apache/BSD-style open
 source license."
 This file details RISC OS specific aspects, for more information about
 Subversion in general, please see http://subversion.tigris.org or
-http://svnbook.red-bean.com/book.html
+http://svnbook.red-bean.com/
 
-This port can access repositories via the http and https protocols, the
-custom svn protocol, and svn tunnelled over ssh (svn+ssh). It cannot
-currently access local repositories.
+This port can access remote repositories via the http and https
+protocols, the custom svn protocol, svn tunnelled over ssh (svn+ssh),
+and local repositories with the file protocol.
 
 Usage
 ~~~~~
@@ -29,14 +29,15 @@ svn: RA layer failed to init socket layer
 svn: network socket initialization failed
 
 Peter Naulls' UnixHome from
-http://www.chocky.org/unix/downloads/support/UnixHome-102.zip
+http://www.riscos.info/unix/downloads/support/UnixHome-1.03.zip
 (Subversion will work without UnixHome, but it will keep creating a
 /subversion directory in your current directory).
 
-John-Mark Bell's iconv module http://moose.mine.nu:6888/iconv002.zip
-(Subversion will work without this module, but may give errors if it
-needs to convert between character sets, e.g. if filenames have
-top-bit-set characters in them).
+John-Mark Bell's iconv module
+http://netsurf.sourceforge.net/iconv/iconv_latest.zip (Subversion will
+work without this module, but may give errors if it needs to convert
+between character sets, e.g. if filenames have top-bit-set characters
+in them).
 
 The SharedUnixLibrary module
 ftp://gccsdk.riscos.info/pub/gcc/latest/system.zip
@@ -45,11 +46,29 @@ Log mesages
 ~~~~~~~~~~~
 You should generally use the -m or -F options on the command line to
 specify log messages when committing files. It is possible to use
-Justin Fletcher's EE program to allow you to edit log messages in you
+Justin Fletcher's EE program to allow you to edit log messages in your
 favorite text editor, however this is disable by default because there
 are currently a couple of unresolved issues which can give confusing
 error messages. If you wish to enable this, then uncomment the line in
 !SVN.!Boot.
+
+
+Local repositories
+~~~~~~~~~~~~~~~~~~
+Local repositories can be created with the svnadmin program and
+accessed with the file:// protocol. Only FSFS type repositories are
+supported, BDB types are not.
+
+For example:
+*dir ADFS::4.$
+*svnadmin create testrepos
+*svn co file:///ADFS::4/$/testrepos testwc
+*dir testwc
+*svn up
+
+Note that local repositories have only had minimal testing so far, so
+use at your own risk, and always make regular backups.
+
 
 Filetypes
 ~~~~~~~~~
@@ -129,7 +148,6 @@ confused.
 TODO
 ~~~~
 Things that I'm intending to do in the future:
-Add support for local repository access
 Keep the RISC OS port up to date
 
 Things that I'm unlikely to be doing:
