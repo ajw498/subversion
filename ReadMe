@@ -22,9 +22,11 @@ svn diff foo.c.bar
 
 Prerequisites
 ~~~~~~~~~~~~~
-Theo Markettos' CryptRandom module. Merge the supplied !System with your
-!System. If you see a message such as the following when trying to run
-Subversion then it is beacuse the CryptRandom module cannot be found.
+Theo Markettos' CryptRandom module.
+http://www.chiark.greenend.org.uk/~theom/riscos/crypto/
+
+If you see a message such as the following when trying to run Subversion
+then it is beacuse the CryptRandom module cannot be found.
 svn: RA layer failed to init socket layer
 svn: network socket initialization failed
 
