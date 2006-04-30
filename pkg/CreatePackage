@@ -1,0 +1,49 @@
+#!/usr/bin/perl -w
+#
+#  $Id$
+#
+
+open(CHANGELOG, "<../!SVN/ChangeLog") or die;
+$line = <CHANGELOG>;
+$line =~ /^v([\d\.]*) .*/;
+$version = $1;
+close CHANGELOG;
+
+open(OUT,">RiscPkg/Control");
+
+print OUT qq{Package: Subversion
+Priority: Optional
+Section: Programming
+Maintainer: Alex Waugh <alex\@alexwaugh.com>
+Standards-Version: 0.0.0
+Version: $version
+Licence: Free
+Description: The Subverion version control system.
+};
+
+
+#Depends: SharedUnixLibrary (>=1.07)
+# CryptRandom
+#UnixHome
+#iconv
+
+close OUT;
+
+mkdir "SysVars";
+
+open(BOOT, "<../!SVN/!Boot") or die;
+while (<BOOT>) {
+  if (/^Set +(\S+) +(.+)/) {
+    my $var = $1;
+    my $val = $2;
+    $var =~ s/\$/=24/;
+    $var =~ s/\@/=64/;
+    $val =~ s/\<Obey\$Dir\>/\<Packages\$\@Apps.Programming.!SVN\>/;
+    $val =~ s/\%%/%/;
+    open(VAR, ">SysVars/$var") or die;
+    print VAR $val;
+    close VAR;
+  }
+}
+close BOOT;
+
