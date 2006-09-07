@@ -5,7 +5,7 @@
 
 open(CHANGELOG, "<../!SVN/ChangeLog") or die;
 $line = <CHANGELOG>;
-$line =~ /^v([\d\.]*) .*/;
+$line =~ /^v([\d\.\-]*) .*/;
 $version = $1;
 close CHANGELOG;
 
@@ -39,6 +39,7 @@ while (<BOOT>) {
     $var =~ s/\$/=24/;
     $var =~ s/\@/=64/;
     $val =~ s/\<Obey\$Dir\>/\<Packages\$\@Apps.Programming.!SVN\>/;
+    $val =~ s/\<SVN\$Dir\>/\<Packages\$\@Apps.Programming.!SVN\>/;
     $val =~ s/\%%/%/;
     open(VAR, ">SysVars/$var") or die;
     print VAR $val;
