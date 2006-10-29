@@ -18,11 +18,12 @@ Maintainer: Alex Waugh <alex\@alexwaugh.com>
 Standards-Version: 0.0.0
 Version: $version
 Licence: Free
+Depends: UnixLib (>=4.0-3)
 Description: The Subverion version control system.
 };
 
 
-#Depends: SharedUnixLibrary (>=1.07)
+#Depends: 
 # CryptRandom
 #UnixHome
 #iconv
