@@ -1,3 +1,6 @@
+v1.4.2-1 11-Dec-06
+Fixed bug that caused a segfault when commiting to a repository via https.
+
 v1.4.2 25-Nov-06
 Updated to Subversion 1.4.2
 Fixed bug that caused commits to local repositories to fail.
