@@ -19,3 +19,5 @@ commands to set appropriate filetype properties and rename files.
 That's it. Old working copies will still work if you set the
 svn$filetypeext variable, but if you try to updating them to a later
 version then it will probably fail to update properly.
+
+The above only converts the latest revision of the repository, for the file checked out in the working copy. If you want to convert a repository's entire history, so that older revisions also have the filetype information then you can use the ro-filetype.pl script. See the comments on the top of the script for how to use it.
