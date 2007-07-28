@@ -3,7 +3,7 @@
 #
 
 release: clean
-	zip -r -9 -I svn/zip !SVN Licences ReadMe_Upgrading source convertfiletypes -x */svn*
+	zip -r -9 -I svn/zip !SVN Licences source convertfiletypes -x */svn*
 	make -C pkg
 
 .PHONY: clean release
