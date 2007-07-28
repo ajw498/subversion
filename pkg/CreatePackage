@@ -13,9 +13,9 @@ open(OUT,">RiscPkg/Control");
 
 print OUT qq{Package: Subversion
 Priority: Optional
-Section: Programming
+Section: Development
 Maintainer: Alex Waugh <alex\@alexwaugh.com>
-Standards-Version: 0.0.0
+Standards-Version: 0.1.0
 Version: $version
 Licence: Free
 Depends: UnixLib (>=4.0-3)
@@ -39,8 +39,8 @@ while (<BOOT>) {
     my $val = $2;
     $var =~ s/\$/=24/;
     $var =~ s/\@/=64/;
-    $val =~ s/\<Obey\$Dir\>/\<Packages\$\@Apps.Programming.!SVN\>/;
-    $val =~ s/\<SVN\$Dir\>/\<Packages\$\@Apps.Programming.!SVN\>/;
+    $val =~ s/\<Obey\$Dir\>/\<Packages\$\@Apps.Development.!SVN\>/;
+    $val =~ s/\<SVN\$Dir\>/\<Packages\$\@Apps.Development.!SVN\>/;
     $val =~ s/\%%/%/;
     open(VAR, ">SysVars/$var") or die;
     print VAR $val;
